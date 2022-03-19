@@ -25,3 +25,4 @@ module.exports = {
     await queryInterface.bulkDelete('BlogPosts', null, {});
   },
 };
+

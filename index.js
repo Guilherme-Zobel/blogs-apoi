@@ -1,6 +1,14 @@
 const express = require('express');
+const userRoutes = require('./routes/userRoutes');
+const error = require('./middlewares/error');
 
 const app = express();
+
+app.use(express.json());
+
+app.use('/user', userRoutes);
+
+app.use(error);
 
 app.listen(3000, () => console.log('ouvindo porta 3000!'));
 
