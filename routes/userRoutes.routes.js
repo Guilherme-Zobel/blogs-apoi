@@ -9,5 +9,6 @@ router.post('/', validateUser.validateDisplayName,
 validateUser.validateEmail, validateUser.validatePassword, user.createUser);
 
 router.get('/', validateToken.tokenUser, user.getAllUser);
+router.get('/:id', validateToken.tokenUser, user.getUserById);
   
 module.exports = router;
