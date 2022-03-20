@@ -1,7 +1,7 @@
 const express = require('express');
-const userRoutes = require('./routes/userRoutes');
+const userRoutes = require('./routes/userRoutes.routes');
 const error = require('./middlewares/error');
-const loginRoutes = require('./routes/loginRoutes');
+const loginRoutes = require('./routes/loginRoutes.routes');
 
 const app = express();
 

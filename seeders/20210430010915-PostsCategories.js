@@ -18,4 +18,3 @@ module.exports = {
     await queryInterface.bulkDelete('PostsCategories', null, {});
   },
 };
-

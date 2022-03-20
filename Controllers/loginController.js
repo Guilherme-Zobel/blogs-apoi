@@ -7,9 +7,9 @@ const loginService = async (req, res, next) => {
   const { email, password } = req.body;
 
   try {
-    const findUser = await User.findAll({ where: { email, password } });
+    const userFound = await User.findAll({ where: { email, password } });
 
-    if (findUser.length) {
+    if (userFound.length) {
       const jwtConfig = { expiresIn: '1d', algorithm: 'HS256' };
 
       const payload = { data: email };
@@ -19,7 +19,7 @@ const loginService = async (req, res, next) => {
       return res.status(200).json({ token });
     }
 
-    if (!findUser.email || !findUser.password) {
+    if (!userFound.email || !userFound.password) {
       return res.status(400).json({ message: 'Invalid fields' });
     }
   } catch (e) {
