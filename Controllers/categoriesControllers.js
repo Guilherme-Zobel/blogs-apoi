@@ -3,7 +3,6 @@ const { Categorie } = require('../models');
 const createCategory = async (req, res, next) => {
   try {
     const { name } = req.body;
-    console.log(`aqui está o resultado ${name}`);
     
     if (!name) return res.status(400).json({ message: '"name" is required' });
 

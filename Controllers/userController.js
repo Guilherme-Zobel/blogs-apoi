@@ -32,7 +32,6 @@ const getAllUser = async (req, res, next) => {
   try {
     const attributes = ['id', 'displayName', 'email', 'image'];
     const getAllUsers = await User.findAll({ attributes });
-    console.log(getAllUsers);
     return res.status(200).json(getAllUsers);
   } catch (e) {
     next(e);
